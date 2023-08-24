@@ -1,0 +1,60 @@
+import java.util.*;
+class Calculator
+{
+ public double add(int number1,int number2)
+{
+  return number1+number2;
+}
+public double sub(int number1,int number2)
+{
+  return number1-number2;
+}
+public double mul(int number1,int number2)
+{
+  return number1*number2;
+}
+public double div(int number1,int number2)
+{
+  return number2/number1;
+}
+}
+
+class Result extends Calculator
+{
+public static void main(String[]args)
+{
+Scanner sc=new Scanner(System.in);
+
+System.out.println("1-addition 2-subtraction 3-multiplication 4-division \n");
+System.out.println("enetr your choice");
+int ch=sc.nextInt();
+System.out.println("enter first number");
+int first=sc.nextInt();
+System.out.println("enter second number");
+int second=sc.nextInt();
+
+double result=0;
+Result r=new Result();
+switch(ch)
+{
+case 1:
+      result=r.add(first, second);
+      break;
+case 2:
+       result=r.sub(first, second);
+       break;
+case 3:
+       result=r.mul(first, second);
+       break;
+case 4:
+       result=r.div(first, second);
+       break;
+default:
+       System.out.println("invalid choice");
+       sc.close();
+       return;
+}
+System.out.println("result is"+result);
+sc.close();
+}
+}
